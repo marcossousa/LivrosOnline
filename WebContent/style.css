@@ -1,0 +1,133 @@
+.enviar_ab {background:#f2f2f2; padding:20px 40px;}
+
+legend {
+	font-size:1.5em; 
+	margin:0 0 10px 0;
+}
+
+fieldset {
+  padding: 1em;
+  font:80%/1 sans-serif;
+  border: 2px solid #CCCCCC; 
+}
+
+p{
+	padding-bottom: 0px;
+	padding-top: 0px;
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-size: 12px;
+}
+
+.titulo {
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-weight: bold;
+	font-size: 12px;
+	background-color: #6D9F00;
+	height: 25px;
+	color: #FFFFFF;
+	padding-top: 7px;
+	padding-left: 15px;
+}
+
+.message {
+	color: red;
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-size: 10px;
+	font-weight: normal;
+	padding-left: 155px;
+}
+
+.radio label {
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-size: 12px;
+	width: 50px;
+	float: none;
+	display: inline;
+}
+
+select, input {  
+	border:0; 
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	color:#959595; 
+	font-size:12px;
+	border:2px solid #3399ff;
+}
+
+select:FOCUS,INPUT:FOCUS {
+	border:2px solid #6D9F00;
+}
+
+
+textarea {
+	border:0; 
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	color:#959595; 
+	font-size:12px;
+	width:556px; 
+	height:89px; 
+	margin:4px 0 0 0; 
+	float:left;
+}
+
+.ok { 
+	width:109px; 
+	height:87px; 
+	border:1px solid #CCCCCC; 
+	float:left; 
+	background:none;
+	color:#000; 
+	cursor:pointer; 
+	padding:0;
+}
+
+.ok:hover {
+	background:#3399ff; 
+	color:#fff; 
+	border:1px solid #3399ff;
+}
+
+label { 
+	float:left;
+	width:150px;
+	padding-top:0.2em;
+	padding-bottom:0.1em;
+	text-align:left;
+	font-weight:bold; 
+	display: block;
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-size: 11px;
+}
+
+.errorMessage {
+	border: 1px solid red;
+	background-image: url(img/error.png);
+	background-repeat: no-repeat;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+	padding-left: 50px;
+	padding-top: 20px;
+	height: 35px;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	vertical-align:middle;
+	color: #000000;
+	width: 80%;
+}
+
+.successMessage {
+	border: 1px solid green;
+	background-image: url(img/success.png);
+	background-repeat: no-repeat;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+	padding-left: 50px;
+	padding-top: 20px;
+	height: 35px;
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	vertical-align:middle;
+	color: #000000;
+	width: 80%;
+}

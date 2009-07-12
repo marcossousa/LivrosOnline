@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#registrar.jsp" PATH="/registrar.jsp"
+  SHAPE="85,92,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#registrar.jsp:0" NAME="item"
+   PATH="/registrar.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sucesso::#AreaCliente.jsp" NAME="output"
+    PATH="/AreaCliente.jsp" TARGET="rules:#AreaCliente.jsp"
+    TITLE="sucesso" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="erro::#registrar.jsp" NAME="output1"
+    PATH="/registrar.jsp"
+    SHAPE="129,136,136,136,136,152,74,152,74,96,79,96"
+    TARGET="rules:#registrar.jsp" TITLE="erro" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#AreaCliente.jsp" PATH="/AreaCliente.jsp"
+  SHAPE="264,112,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

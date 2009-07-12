@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+ <converter>
+  <converter-for-class>jm.livrosonline.entidade.Municipio</converter-for-class>
+  <converter-class>jm.livrosonline.converter.MunicipioConverter</converter-class>
+ </converter>
+ <converter>
+  <converter-for-class>jm.livrosonline.entidade.UnidadeFederativa</converter-for-class>
+  <converter-class>jm.livrosonline.converter.UnidadeFederativaConverter</converter-class>
+ </converter>
+ <managed-bean>
+  <managed-bean-name>cliente</managed-bean-name>
+  <managed-bean-class>jm.livrosonline.entidade.Cliente</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+  <managed-bean-name>clienteBean</managed-bean-name>
+  <managed-bean-class>jm.livrosonline.beans.ClienteBean</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+  <managed-property>
+   <property-name>cliente</property-name>
+   <property-class>jm.livrosonline.entidade.Cliente</property-class>
+   <value>#{cliente}</value>
+  </managed-property>
+ </managed-bean>
+ <navigation-rule>
+  <from-view-id>/registrar.jsp</from-view-id>
+  <navigation-case>
+   <from-outcome>sucesso</from-outcome>
+   <to-view-id>/AreaCliente.jsp</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>erro</from-outcome>
+   <to-view-id>/registrar.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <validator>
+  <validator-id>jm.validator.email</validator-id>
+  <validator-class>jm.livrosonline.validators.EmailValidator</validator-class>
+ </validator>
+</faces-config>
