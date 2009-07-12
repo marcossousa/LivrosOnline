@@ -1,0 +1,38 @@
+- Para rodar o exemplo é necessário: 
+1 - Ter JDK 1.5 ou superior
+2 - Eclipse Ganymede
+3 - Jboss Tools 3.0
+4 - Apache Tomcat 6
+6 - Mysql 5
+
+Passos para instalação:
+1 - Crie uma base de dados no Mysql com o nome livrosonline
+2 - Importe os dados usando o Mysql Administrator
+3 - Importe o script SQL LivrosOnline.sql utilizando o wizard de restauração de bases de dados da ferramenta Administrator.
+4 - Caso o usuário e senha não sejam (root/root) respectivamente, edite o arquivo src/META-INF/persistence.xml e atualize os dados de conexão de acordo com suas necessidades.
+5 - Importe o projeto no eclipse e confira se os seguintes arquivos JAR estão na pasta WebContent/lib:
+antlr.jar
+asm-attrs.jar
+asm.jar
+cglib.jar
+commons-collections.jar
+dom4j.jar
+ejb3-persistence.jar
+hibernate-annotations.jar
+hibernate-commons-annotations.jar
+hibernate-core.jar
+hibernate-entitymanager.jar
+javassist.jar
+jsf-api.jar
+jsf-impl.jar
+jstl-api-1.2.jar
+jstl-impl-1.2.jar
+jta.jar
+junit.jar
+log4j.jar
+mysql-connector-java-5.1.6-bin.jar
+slf4j-api.jar
+slf4j-log4j12.jar
+
+6 - Adicione o projeto ao servidor tomcat na guia "Servers" do Eclipse.
+7 - Execute o projeto.
