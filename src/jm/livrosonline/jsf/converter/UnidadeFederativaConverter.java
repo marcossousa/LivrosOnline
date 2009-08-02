@@ -1,4 +1,4 @@
-package jm.livrosonline.converter;
+package jm.livrosonline.jsf.converter;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;

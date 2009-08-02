@@ -1,4 +1,4 @@
-package jm.livrosonline.validators;
+package jm.livrosonline.jsf.validators;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
