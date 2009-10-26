@@ -6,6 +6,8 @@ import javax.persistence.Persistence;
 
 import jm.livrosonline.dao.ClienteDao;
 import jm.livrosonline.dao.ClienteJpaDao;
+import jm.livrosonline.dao.LivroDao;
+import jm.livrosonline.dao.LivroJpaDao;
 import jm.livrosonline.dao.MunicipioDao;
 import jm.livrosonline.dao.MunicipioJpaDao;
 import jm.livrosonline.dao.UnidadeFederativaDao;
@@ -15,16 +17,12 @@ public class FactoryDao {
 	
 	private static EntityManagerFactory factory;
 	
-	public static MunicipioDao getMunicipioDao() {
-		return new MunicipioJpaDao();
-	}
-	
-	public static UnidadeFederativaDao getUnidadeFederativaDao() {
-		return new UnidadeFederativaJpaDao();
-	}
-	
 	public static EntityManager createEntityManager() {
 		return getEntityManagerFactory().createEntityManager();
+	}
+	
+	public static ClienteDao getClienteDao() {
+		return new ClienteJpaDao();
 	}
 	
 	private static EntityManagerFactory getEntityManagerFactory() {
@@ -34,9 +32,17 @@ public class FactoryDao {
 		
 		return factory;
 	}
+	
+	public static LivroDao getLivrosDao() {
+		return new LivroJpaDao();
+	}
+	
+	public static MunicipioDao getMunicipioDao() {
+		return new MunicipioJpaDao();
+	}
 
-	public static ClienteDao getClienteDao() {
-		return new ClienteJpaDao();
+	public static UnidadeFederativaDao getUnidadeFederativaDao() {
+		return new UnidadeFederativaJpaDao();
 	}
 
 }

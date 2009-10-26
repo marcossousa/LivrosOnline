@@ -6,6 +6,10 @@
   <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
   <param-value>client</param-value>
  </context-param>
+ <context-param>
+ 	<param-name>jm.jsf.DEFAULT_MAPPING</param-name>
+ 	<param-value>/t/faces/*</param-value>
+ </context-param>
  <listener>
   <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
  </listener>
@@ -18,6 +22,6 @@
  <!-- Mapeamento Faces Servlet -->
  <servlet-mapping>
   <servlet-name>Faces Servlet</servlet-name>
-  <url-pattern>*.jsf</url-pattern>
+  <url-pattern>/t/faces/*</url-pattern>
  </servlet-mapping>
 </web-app>

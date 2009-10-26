@@ -18,6 +18,17 @@ p{
 	font-size: 12px;
 }
 
+a img { border: 0px;}
+
+a:link {
+	color: 993300;
+}
+
+a:visited {
+	color: red;
+}
+
+
 .titulo {
 	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
 	font-weight: bold;
@@ -130,4 +141,76 @@ label {
 	vertical-align:middle;
 	color: #000000;
 	width: 80%;
+}
+
+#menu {
+	width: 210px;
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-weight: bold;
+	font-size: 12px;
+	border: 2px solid #cccccc;
+	float: left;
+}
+
+#menu span{
+	display: block;
+	background-color: #6D9F00;
+	height: 25px;
+	color: #FFFFFF;
+	padding-top: 7px;
+	padding-left: 15px;
+}
+
+#menu a{
+	display: block;
+	font-style: normal;
+	height: 15px;
+	color: #000000;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+#menu a:hover{
+	background-color: #e2f9e4;
+	border: 1px solid #6D9F00;
+}
+
+#livrosContainer {
+	width: 750;
+	float:left;
+	border: 1px solid #6D9F00;
+}
+
+#livrosContainer h2{
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-weight: bold;
+	font-size: 18px;
+	color: #993300;
+}
+
+
+#head {
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-weight: bold;
+	font-size: 20px;
+	width: 100%;
+}	
+
+hr {
+	border: 3px solid #6D9F00;
+}
+
+#LivroItem {
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-weight: normal;
+	font-size: 10px;
+	width: 250px;
+	height: 200px;
+	float: left;
+	text-align: center;
+}
+
+#LivroItem a {
+	border: 0px;
 }

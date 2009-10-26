@@ -15,4 +15,20 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#AreaCliente.jsp" PATH="/AreaCliente.jsp"
   SHAPE="264,112,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#index.jsp" PATH="/index.jsp"
+  SHAPE="66,263,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.jsp:0" NAME="item" PATH="/index.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="visualizar::#visualizar.jsp" NAME="output"
+    PATH="/visualizar.jsp" TARGET="rules:#visualizar.jsp"
+    TITLE="visualizar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#visualizar.jsp" PATH="/visualizar.jsp"
+  SHAPE="245,270,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="index::#index.jsp" NAME="output"
+    PATH="/index.jsp" TARGET="rules:#index.jsp" TITLE="index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>

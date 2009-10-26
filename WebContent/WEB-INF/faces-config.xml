@@ -2,13 +2,21 @@
 <faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+ <component>
+  <component-type>jm.livrosonline.BinaryGraphicImage</component-type>
+  <component-class>jm.livrosonline.jsf.components.UIDynamicImage</component-class>
+ </component>
+ <component>
+  <component-type>jm.livrosonline.tooltip</component-type>
+  <component-class>jm.livrosonline.jsf.components.UITooltip</component-class>
+ </component>
  <converter>
   <converter-for-class>jm.livrosonline.entidade.Municipio</converter-for-class>
-  <converter-class>jm.livrosonline.converter.MunicipioConverter</converter-class>
+  <converter-class>jm.livrosonline.jsf.converter.MunicipioConverter</converter-class>
  </converter>
  <converter>
   <converter-for-class>jm.livrosonline.entidade.UnidadeFederativa</converter-for-class>
-  <converter-class>jm.livrosonline.converter.UnidadeFederativaConverter</converter-class>
+  <converter-class>jm.livrosonline.jsf.converter.UnidadeFederativaConverter</converter-class>
  </converter>
  <managed-bean>
   <managed-bean-name>cliente</managed-bean-name>
@@ -25,6 +33,11 @@
    <value>#{cliente}</value>
   </managed-property>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>livrosBean</managed-bean-name>
+  <managed-bean-class>jm.livrosonline.beans.LivrosHomeBean</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+ </managed-bean>
  <navigation-rule>
   <from-view-id>/registrar.jsp</from-view-id>
   <navigation-case>
@@ -36,8 +49,33 @@
    <to-view-id>/registrar.jsp</to-view-id>
   </navigation-case>
  </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/index.jsp</from-view-id>
+  <navigation-case>
+   <from-outcome>visualizar</from-outcome>
+   <to-view-id>/visualizar.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>*</from-view-id>
+  <navigation-case>
+   <from-outcome>index</from-outcome>
+   <to-view-id>/index.jsp</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <render-kit>
+  <renderer>
+   <display-name>tooltip</display-name>
+   <component-family>jm.livrosonline.tooltip</component-family>
+   <renderer-type>jm.livrosonline.render.tooltip</renderer-type>
+   <renderer-class>jm.livrosonline.jsf.render.TooltipRender</renderer-class>
+  </renderer>
+ </render-kit>
  <validator>
   <validator-id>jm.validator.email</validator-id>
-  <validator-class>jm.livrosonline.validators.EmailValidator</validator-class>
+  <validator-class>jm.livrosonline.jsf.validators.EmailValidator</validator-class>
  </validator>
+ <lifecycle>
+  <phase-listener>jm.livrosonline.jsf.phaseListener.ImageLoaderPhaseListener</phase-listener>
+ </lifecycle>
 </faces-config>
