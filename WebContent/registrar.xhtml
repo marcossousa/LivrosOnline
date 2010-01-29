@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-9"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:jm="http://jm.livrosonline/jsf/html"
+      template="/template.xhtml">
+	<fieldset>
+	<div><h:messages globalOnly="true" errorClass="errorMessage" infoClass="successMessage"/></div>
+	<div class="titulo">Meus dados pessoais</div>
+	<jm:inputText name="nome" label="Nome"  value="#{cliente.nome}" required="true" maxlength="60" 
+		size="40" requiredMessage="Informe o seu nome" messageClass="message"/>	
+	
+	<jm:inputText name="sobrenome" label="Sobrenome" value="#{cliente.sobrenome}" required="true" 
+		maxlength="60" size="40" requiredMessage="Informe o seu sobrenome"  messageClass="message"/>
+		
+	<jm:inputText name="cpf" label="CPF" value="#{cliente.cpf}" required="true" maxlength="11"  
+		size="20" requiredMessage="Informe o seu CPF" comments="(Apenas Números)"  messageClass="message"/> 
+	
+	<jm:inputText name="rg" label="RG" value="#{cliente.rg}" maxlength="10"  
+		size="20" requiredMessage="Informe o seu CPF"  messageClass="message"/>
+	
+	<jm:inputText name="DadaNascimento" label="Data de Nascimento" value="#{cliente.dataNascimento}" maxlength="10"  size="15">
+			<f:convertDateTime pattern="dd/MM/yyyy"/>
+	</jm:inputText>
+	
+	<p><h:outputLabel value="Sexo*:" for="sexo" />
+		<h:selectOneRadio id="sexo" value="#{cliente.sexo}" required="true" 
+		requiredMessage="Sexo é obrigatório" styleClass="radio">
+			<f:selectItems value="#{clienteBean.opcoesSexo}"/>
+		</h:selectOneRadio>
+		<br/><h:message for="sexo" styleClass="message" /></p>
+	
+	<jm:inputText name="telefone" label="Telefone" value="#{cliente.telefone}" maxlength="10" size="20"  
+		messageClass="message" comments="(Apenas Números)" />
+
+	<jm:inputText name="celular" label="Celular" value="#{cliente.celular}" maxlength="10" size="20" 
+		 messageClass="message" comments="(Apenas Números)" />
+	
+	<div class="titulo">Meu endereço</div>
+	
+	<jm:inputText name="endereco" label="Endereço" value="#{cliente.endereco}" required="true" 
+		maxlength="60" size="40" requiredMessage="Informe o seu endereco" messageClass="message" />
+	
+	<jm:inputText name="numero" label="Número" value="#{cliente.numero}" required="true" 
+		maxlength="4" size="10" requiredMessage="Informe o número do seu endereço" messageClass="message" />
+
+	<jm:inputText name="complemento" label="Complemento" value="#{cliente.complemento}" maxlength="20" size="20" messageClass="message"  />
+	
+	<jm:inputText name="bairro" label="Bairro" value="#{cliente.bairro}" required="true" 
+		maxlength="60" size="40" requiredMessage="Informe o bairro do seu endereço" messageClass="message" />
+		
+	<p>
+		<h:outputLabel value="Estado*:" for="uf" />
+		<h:selectOneMenu id="uf" value="#{cliente.unidadeFederativa}" required="true" immediate="true"
+		requiredMessage="Informe o estado do seu endereço" valueChangeListener="#{clienteBean.atualizaMunicipio}" onchange="submit()">
+			<f:selectItem itemLabel="--Selecione um --"/>
+			<f:selectItems value="#{clienteBean.unidadesFederativas}"/>
+		</h:selectOneMenu>
+		<br/><h:message for="uf" styleClass="message" />
+	</p>
+	
+	<p>
+		<h:outputLabel value="Cidade*:" for="cidade" />
+		<h:selectOneMenu id="cidade" value="#{cliente.municipio}" required="true" 
+		requiredMessage="Informe a cidade do seu endereço">
+			<f:selectItem itemLabel="--Selecione uma --"/>
+			<f:selectItems value="#{clienteBean.municipios}"/>
+		</h:selectOneMenu>
+		<br/><h:message for="cidade" styleClass="message" />
+	</p>
+	
+	<jm:inputText name="referencia" label="Referência" value="#{cliente.referencia}" maxlength="100" size="60" messageClass="message" />
+
+	<div class="titulo">Meus dados para acesso</div>
+	
+	<jm:inputText name="email" label="E-mail" value="#{cliente.email}" required="true" 
+		maxlength="100" size="60" requiredMessage="É necessário informar um e-mail válido para login" messageClass="message" 
+		validatorId="jm.validator.email"/>
+
+	<p>
+		<h:outputLabel value="Senha:" for="senha" />
+		<h:inputSecret id="senha" value="#{cliente.senha}" required="true" 
+		maxlength="16" size="20" requiredMessage="A senha é obrigatório"/>
+		<br/><h:message for="senha" styleClass="message" />
+	</p>
+	<p>
+		<h:outputLabel value="Confirme seu senha:" for="senhaConfirmacao" />
+		<h:inputSecret id="senhaConfirmacao" value="#{clienteBean.senhaConfirmacao}" required="true" 
+		maxlength="16" size="20" requiredMessage="Informe a confirmação de senha"/>
+		<br/><h:message for="senhaConfirmacao" styleClass="message" />
+	</p>
+	
+	<p>
+		<h:commandButton action="#{clienteBean.registrar}" value="Registrar" styleClass="ok"/>
+	</p>
+	</fieldset>
+</ui:composition>

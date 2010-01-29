@@ -177,8 +177,10 @@ label {
 }
 
 #livrosContainer {
-	width: 750;
-	float:left;
+	margin-left: 230px;
+	overflow:hidden;
+	height: auto;
+	padding-top: 5px;
 	border: 1px solid #6D9F00;
 }
 
@@ -195,13 +197,30 @@ label {
 	font-weight: bold;
 	font-size: 20px;
 	width: 100%;
+}
+
+#registrar {
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-size: 12px;
+	width: 100%;
+	color: #993300;
+	text-align: right;
+}
+
+#foot {
+	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
+	font-weight: bold;
+	font-size: 11px;
+	float: left;
+	width: 100%;
+	display: block;
 }	
 
 hr {
 	border: 3px solid #6D9F00;
 }
 
-#LivroItem {
+.LivroItem {
 	font-family:"Trebuchet MS", Arial, Verdana, sans-serif; 
 	font-weight: normal;
 	font-size: 10px;

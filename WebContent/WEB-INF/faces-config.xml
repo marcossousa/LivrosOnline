@@ -36,10 +36,10 @@
  <managed-bean>
   <managed-bean-name>livrosBean</managed-bean-name>
   <managed-bean-class>jm.livrosonline.beans.LivrosHomeBean</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
+  <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  <navigation-rule>
-  <from-view-id>/registrar.jsp</from-view-id>
+  <from-view-id>/registrar.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>sucesso</from-outcome>
    <to-view-id>/AreaCliente.jsp</to-view-id>
@@ -50,17 +50,17 @@
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <from-view-id>/index.jsp</from-view-id>
+  <from-view-id>/index.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>visualizar</from-outcome>
-   <to-view-id>/visualizar.jsp</to-view-id>
+   <to-view-id>/visualizar.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
   <from-view-id>*</from-view-id>
   <navigation-case>
    <from-outcome>index</from-outcome>
-   <to-view-id>/index.jsp</to-view-id>
+   <to-view-id>/index.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <render-kit>
@@ -78,4 +78,9 @@
  <lifecycle>
   <phase-listener>jm.livrosonline.jsf.phaseListener.ImageLoaderPhaseListener</phase-listener>
  </lifecycle>
+ <application>
+ 	<view-handler>
+com.sun.facelets.FaceletViewHandler
+</view-handler>
+ </application>
 </faces-config>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	jsfc="ui:component">
+	<p class="jm-input-class">
+		<h:outputLabel value="#{label}#{required ? '*:' : ':'}" for="#{name}" />
+		<h:inputText id="#{name}" value="#{value}" required="#{required}" label="#{label}"
+					size="#{size}" title="#{empty title? label : title}" readonly="#{readonly}" styleClass="#{styleClass}" style="#{style}"
+					disabled="#{disabled}" maxlength="#{maxlength}" requiredMessage="#{requiredMessage}">
+			<ui:insert />
+			<c:if test="#{not empty converterId}">
+				<f:converter converterId="#{converterId}" />
+			</c:if>
+		</h:inputText><h:outputText value="#{comments}" />
+		
+		<br/><h:message for="#{name}" styleClass="#{messageClass}" style="messageStyle"/>
+	</p>	
+</html>

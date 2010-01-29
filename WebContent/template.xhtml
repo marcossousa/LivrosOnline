@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+	<title><ui:insert name="title">Livros Online: Encontre seu livro já!</ui:insert></title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<h:form id="livrosform">
+	<div style="width:100%;">
+		<div id="head">
+			Livros Online
+			<div id="registrar">
+				<h:outputLink value="#{facesContext.externalContext.request.contextPath}/faces/registrar.xhtml">Registre-se Já!</h:outputLink>
+			</div>
+		</div>
+		<hr/>
+		<ui:include src="menu.xhtml" />
+		<div id="livrosContainer">
+			<ui:insert/>
+		</div>
+		
+		<div id="foot">
+			<hr />
+			2009 - Livros Online - Obrigado pela preferência
+		</div>
+	</div>
+	</h:form>
+</body>
+</html>

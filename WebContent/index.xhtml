@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:jm="http://jm.livrosonline/jsf/html"
+      template="/template.xhtml">
+	<ui:repeat value="#{livrosBean.livros}" var="livro">
+	<span class="LivroItem">
+		<h:commandLink action="#{livrosBean.selecionarLivro}">
+			<f:setPropertyActionListener value="#{livro.id}" target="#{livrosBean.livroIdSelecionado}" />
+			<jm:graphicImage value="#{livro.imagem}" width="88" height="110"/><br/>
+			<h:outputText value="#{livro.nome}" />
+		</h:commandLink><br/>
+		<jm:tooltip id="FormasPagamento">
+			<f:facet name="content">
+				<h:panelGroup>
+					<b>Outras formas de pagamento</b><br/>
+					2x - <h:outputText value="#{livro.preco / 2}" >
+						<f:convertNumber pattern="R$,##0.00" locale="BR"/>
+					</h:outputText><br/>
+					3x - <h:outputText value="#{livro.preco / 3}" >
+						<f:convertNumber pattern="R$,##0.00" locale="BR"/>
+					</h:outputText>
+				</h:panelGroup>
+			</f:facet>
+			<h:outputText value="#{livro.editora} por #{livro.autor}"/><br/>
+			Por apenas: <h:outputText value="#{livro.preco}" style="color:#993300;">
+				<f:convertNumber pattern="R$,##0.00" locale="BR"/>
+			</h:outputText>
+		</jm:tooltip>
+	</span>
+	</ui:repeat>
+</ui:composition>

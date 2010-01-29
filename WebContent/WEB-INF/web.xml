@@ -7,8 +7,20 @@
   <param-value>client</param-value>
  </context-param>
  <context-param>
- 	<param-name>jm.jsf.DEFAULT_MAPPING</param-name>
- 	<param-value>/t/faces/*</param-value>
+  <param-name>jm.jsf.DEFAULT_MAPPING</param-name>
+  <param-value>/faces/*</param-value>
+ </context-param>
+ <context-param>
+  <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+  <param-value>.jsp</param-value>
+ </context-param>
+ <context-param>
+  <param-name>facelets.VIEW_MAPPINGS</param-name>
+  <param-value>*.xhtml</param-value>
+ </context-param>
+ <context-param>
+  <param-name>facelets.DEVELOPMENT</param-name>
+  <param-value>true</param-value>
  </context-param>
  <listener>
   <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
@@ -22,6 +34,9 @@
  <!-- Mapeamento Faces Servlet -->
  <servlet-mapping>
   <servlet-name>Faces Servlet</servlet-name>
-  <url-pattern>/t/faces/*</url-pattern>
+  <url-pattern>/faces/*</url-pattern>
  </servlet-mapping>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
 </web-app>
